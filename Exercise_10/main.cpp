@@ -2,8 +2,6 @@
 //Create a function that takes an array of integers and returns the average of the even numbers from that array
 
 #include <iostream>
-#include <fstream>
-#include <string>
 #include <stdlib.h>
 #include <time.h>
 #include <vector>
