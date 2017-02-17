@@ -10,7 +10,7 @@
 
 using namespace std;
 
-void fill_vector_random(vector<int>& newVector);
+void fill_vector_random(vector<int>& newVector, int newVector_length);
 
 int averageof_even_num(vector<int>& newVector);
 
@@ -19,18 +19,18 @@ void print_vector(vector<int>& newVector);
 int main() {
   vector<int> myVector;
   myVector.reserve(10);
-  fill_vector_random(myVector);
+  fill_vector_random(myVector, 10);
   print_vector(myVector);
-  cout << averageof_even_num(myVector) <<endl;
+  cout << "The average of the even numbers: " << averageof_even_num(myVector) <<endl;
   
   return 0;
 }
 
-void fill_vector_random(vector<int>& newVector) {
+void fill_vector_random(vector<int>& newVector, int newVector_length) {
   srand(time(NULL));
-  for (int i = 0; i < 10; i++) {
-    int b = rand() % 10;
-    newVector.push_back(b);
+  for (int i = 0; i < newVector_length; i++) {
+    int random_name = rand() % 10;
+    newVector.push_back(random_name);
   }
 }
 
@@ -49,7 +49,7 @@ int averageof_even_num(vector<int>& newVector) {
 void print_vector(vector<int>& newVector) {
   cout << "The elements of the randomly generated vector: ";
   for (unsigned int i = 0; i < newVector.size(); i++) {
-    cout << newVector[i] << " ";
+    cout << newVector[i] << ", ";
   }
   cout << endl;
 }
